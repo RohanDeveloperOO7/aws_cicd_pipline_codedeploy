@@ -1,37 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AAR DEMO | AWS CLOUD DEPLOYMENT</title>
-  <style>
-    body {
-      color: #000080;
-      background-color: #FFFFFF;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RohanCloudTech Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc, #45a247);
+            color: #fff;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            transition: background 0.5s ease-in-out;
+        }
+
+        header {
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border-bottom: 4px solid #ff1493;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #ff1493;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #fff;
+        }
+
+        .content {
+            max-width: 1200px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ffecb3;
+        }
+
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: #ff6347;
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            background-color: #ff4500;
+        }
+
+        .course-card img {
+            max-width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .course-card p {
+            font-size: 1rem;
+            color: #f5f5f5;
+        }
+
+        footer {
+            width: 100%;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #ff1493, #ff6347);
+            color: #fff;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+            border-top: 4px solid #ff1493;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .courses {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-card {
+                width: 80%;
+                margin-bottom: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content h2 {
+                font-size: 2rem;
+            }
+
+            footer p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+  </head>
 <body>
-  <div align="center">
-    <img src="https://s3.ap-south-1.amazonaws.com/www.basava.com/aar_logo_final.png" style="max-width: 20%;">
-    <h1>Congratulations!!! </h1>
-      <h2>Welcome to AAR SOURCE| Ram Hemareddy</h2>
-    <h3>This application was deployed using AWS CodeDeploy.</h3>
-    <p>For next steps, read the <a href="http://aws.amazon.com/documentation/codedeploy">AWS CodeDeploy Documentation</a>.</p>
-  </div>
+    <header>
+        <h1>RohanCloudTech Academy</h1>
+        <p>Empowering Your Future with Cloud and Tech</p>
+    </header>
+
+    <div class="content">
+        <h2>Our Courses</h2>
+        <p>Explore a variety of courses designed to elevate your cloud computing and technology skills.</p>
+
+        <div class="courses">
+            <div class="course-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*xsir-fypCq_LrbK5jjyN9w.jpeg" alt="Cloud Computing">
+                <h3>Cloud Computing</h3>
+                <p>Learn the fundamentals of cloud infrastructure and services.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*xsir-fypCq_LrbK5jjyN9w.jpeg" alt="Machine Learning">
+                <h3>Machine Learning</h3>
+                <p>Dive into the world of AI and machine learning with hands-on projects.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://www.centizen.com/wp-content/uploads/2020/03/Devops-tools.png" alt="DevOps">
+                <h3>DevOps</h3>
+                <p>Master CI/CD pipelines, automation, and modern software delivery practices.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://www.deepseadev.com/wp-content/uploads/2024/06/uses-of-python.jpg" alt="Python Programming">
+                <h3>Python Programming</h3>
+                <p>Build a strong foundation in Python with real-world coding exercises.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RohanCloudTech Academy. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-
